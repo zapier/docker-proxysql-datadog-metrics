@@ -87,13 +87,12 @@ class ProxySQLMetrics:
         if not host or not port or not user or not password:
             raise Exception("ProxySQL host, port, user and password are needed")
 
-        with self._connect(host, port, user, password, connect_timeout) as conn:
-            try:
+        try:
+            with self._connect(host, port, user, password, connect_timeout) as conn:
                 # Metric Collection
                 self._collect_metrics(conn, tags, options)
-            except Exception as e:
-                logger.error("ProxySQL collect metrics error: %s" % e, exc_info=True)
-                raise e
+        except Exception as e:
+            logger.error("ProxySQL collect metrics error: %s" % e, exc_info=True)
 
     def _collect_metrics(self, conn, tags, options):
         """Collects all the different types of ProxySQL metrics and submits them to Datadog"""
