@@ -67,11 +67,11 @@ PROXYSQL_MYSQL_STATS_COMMAND_COUNTERS = {
 PROXYSQL_CONNECTION_POOL_STATS = {
     'Connections_used': ('proxysql.pool.connections_used', GAUGE),
     'Connections_free': ('proxysql.pool.connections_free', GAUGE),
-    'Connections_ok': ('proxysql.pool.connections_ok', RATE),
-    'Connections_error': ('proxysql.pool.connections_error', RATE),
-    'Queries': ('proxysql.pool.queries', RATE),
-    'Bytes_data_sent': ('proxysql.pool.bytes_data_sent', RATE),
-    'Bytes_data_recv': ('proxysql.pool.bytes_data_recv', RATE),
+    'Connections_ok': ('proxysql.pool.connections_ok', GAUGE),
+    'Connections_error': ('proxysql.pool.connections_error', GAUGE),
+    'Queries': ('proxysql.pool.queries', GAUGE),
+    'Bytes_data_sent': ('proxysql.pool.bytes_data_sent', GAUGE),
+    'Bytes_data_recv': ('proxysql.pool.bytes_data_recv', GAUGE),
     'Latency_ms': ('proxysql.pool.latency_ms', GAUGE),
 }
 
